@@ -1,0 +1,216 @@
+/* Define Global Colors */
+:root {
+    --global-palette4: #2D3748; /* Dark grayish color */
+    --global-palette-highlight: #c6884c; /* Highlight text color */
+}
+
+/* Top Header Styling */
+.site-header {
+    background-color: var(--global-palette4); /* Use global palette for header */
+    padding: 10px 0;
+    color: var(--global-palette-highlight);
+
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    color: var(--global-palette-highlight);
+
+}
+
+.contact-icon {
+    width: 24px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.register-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Navigation bar styles */
+nav {
+    background-color: var(--global-palette4); /* Using the color you suggested */
+    padding: 15px;
+    color: white;
+}
+
+nav a {
+    color: var(--global-palette-highlight); /* For link text color */
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.logo-container {
+    flex: 1;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    flex: 2;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+/* Scrolling Contact Info */
+.scrolling-number {
+    background-color: #FFFFFF;
+    color: var(--global-palette-highlight); /* Highlight color for scrolling text */
+    padding: 10px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.scrolling-number p {
+    display: inline-block;
+    animation: scroll-left 10s linear infinite;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Inquiry Form Styling */
+.inquiry-form {
+    background: url("{% static 'bulklands/capital-hd.webp' %}") no-repeat center center;
+    background-size: cover;
+    padding: 20px;
+    color: white;
+}
+
+.inquiry-form form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.inquiry-form form div {
+    flex-basis: 45%;
+    margin-bottom: 15px;
+}
+
+.inquiry-form form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.inquiry-form form input,
+.inquiry-form form select,
+.inquiry-form form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: var(--global-palette4); /* Text color within form */
+}
+
+.inquiry-form form button {
+    flex-basis: 100%;
+    background-color: var(--global-palette-highlight); /* Button highlight color */
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Amaravathi Section Styling */
+.amaravathi-section img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* About Us, Services, Land Department, Our Groups, and Contact Us Sections */
+#about-us, #services, #land-department, #our-groups, #contact-us {
+    background-size: cover;
+    background-position: center;
+    color: #010409;
+    text-align: center;
+    padding: 60px;
+    margin-top: 30px;
+}
+
+#about-us h2, #services h2, #land-department h2, #our-groups h2, #contact-us h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#about-us p, #services p, #land-department p, #our-groups p, #contact-us p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Achievements Section Styling */
+.achievements-section {
+    background-color: #f4f4f4;
+    padding: 50px;
+    text-align: center;
+}
+
+.achievements-section h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.achievements-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.achievement-item {
+    text-align: center;
+    flex-basis: 22%;
+}
+
+.achievement-item h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.achievement-item p {
+    font-size: 16px;
+}
+
+.achievement-item img {
+    width: 80px;
+    height: auto;
+    margin-top: 15px;
+}
+
+

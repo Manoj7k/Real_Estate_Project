@@ -1,0 +1,25 @@
+
+
+ {% extends 'bulklands/base.html' %}
+
+{% block content %}
+    <div class="registration-section" style="background-color: #f4f4f4; padding: 20px;">
+        <h2>Agent Registration Form</h2>
+        <p>Join us as an agent and gain access to exclusive land deals. Fill in the form below to register.</p>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit Registration</button>
+        </form>
+
+        <div style="margin-top: 20px;">
+            <h4>Why Partner with Tulasi Rao Bulklands?</h4>
+            <ul>
+                <li>Exclusive listings</li>
+                <li>Support from our expert team</li>
+                <li>Opportunities to grow in the real estate market</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

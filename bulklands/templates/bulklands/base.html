@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tulasi Rao Bulklands</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bulklands/style.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+    <!-- Top Header -->
+    <header class="site-header">
+        <div class="top-bar">
+            <div class="contact-info">
+                <img src="{% static 'bulklands/mail.png' %}" alt="mail" class="contact-icon"> 
+                <span style="margin-right: 20px;">tulasirao@gmail.com</span>
+                <img src="{% static 'bulklands/phone.png' %}" alt="phone" class="contact-icon"> 
+                <span>9030744955 </span>
+            </div>
+            <a href="{% url 'agent_register' %}" class="register-button"> <i class="fas fa-user-plus"></i> Agent Register</a>
+        </div>
+    </header>
+
+<!-- Navigation Bar -->
+<nav id="navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+    <div class="logo-container">
+        <img src="{% static 'bulklands/logo2.jpg' %}" alt="Tulasi Rao Bulklands Logo" class="logo" style="height: 60px; width:150px;">
+    </div>
+    <div class="nav-links" style="display: flex;">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="#about-us">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#land-department">Land Department</a>
+        <a href="#our-groups">Our Groups</a>
+        <a href="#contact-us">Contact Us</a>
+    </div>
+</nav>
+
+    <!-- Scrolling Contact Info -->
+    <div class="scrolling-number">
+        <p>Contact us: 9030744955 | tulasirao@gmail.com</p>
+    </div>
+
+    <!-- Main Content Section -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p style="text-align: center;">© 2024 Tulasi Rao Bulklands</p>
+    </footer>
+
+    <script>
+        // Stick the navbar at the top on scroll
+        window.onscroll = function() {stickNavbar()};
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function stickNavbar() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("fixed");
+            } else {
+                navbar.classList.remove("fixed");
+            }
+        }
+    </script>
+</body>
+</html>

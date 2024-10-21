@@ -1,0 +1,205 @@
+{% extends 'bulklands/base.html' %}
+{% load static %}
+
+{% block content %}
+    
+
+<div class="welcome-section" style="position: relative; z-index: 1; text-align: center; height: 400px;">
+
+    <!-- Slideshow Images -->
+    <div class="slideshow-container" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1;">
+        <div class="mySlides1">
+            <img src="{% static 'bulklands/capital-hd.webp' %}" style="width: 100%; height: 400px; object-fit: cover;">
+        </div>
+        <div class="mySlides1">
+            <img src="{% static 'bulklands/amara2.webp' %}" style="width: 100%; height: 400px; object-fit: cover;">
+        </div>
+    </div>
+
+    <!-- Welcome Text Content -->
+    <div style="padding: 50px; position: relative; z-index: 1;">
+        <h1>Welcome to Tulasi Rao Bulklands</h1>
+        <p>Your perfect place to buy and sell lands.</p>
+    </div>
+
+</div>
+
+
+
+    <!-- Inquiry Form Section with sliding background images -->
+    <div class="inquiry-form" style="position: relative; padding: 40px; color: #B8860B;">
+        <div class="slideshow-container" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1;">
+            <div class="mySlides">
+                <img src="{% static 'bulklands/capital-hd.webp' %}" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            {% comment %} <div class="mySlides">
+                <img src="{% static 'bulklands/amara2.webp' %}" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>  {% endcomment %}
+        </div>
+        <h3>Inquire About Our Properties</h3>
+        <form id="inquiryForm" method="post" action="{% url 'inquiry' %}">
+            {% csrf_token %}
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" name="name" required>
+            </div>
+            <div>
+                <label for="mobile">Mobile Number:</label>
+                <input type="text" name="mobile_number" required>
+            </div>
+            <div>
+                <label for="whatsapp">WhatsApp Number:</label>
+                <input type="text" name="whatsapp_number">
+            </div>
+            <div>
+                <label for="email">Email Address:</label>
+                <input type="email" name="email" required>
+            </div>
+            <div>
+                <label for="want">I Want to:</label>
+                <select name="property_type">
+                    <option value="buy">Buy Property</option>
+                    <option value="sell">Sell Property</option>
+                </select>
+            </div>
+            <div>
+                <label for="property">Property:</label>
+                <select name="property_category">
+                    <option value="agriculture">Agriculture</option>
+                    <option value="layouts">Layouts</option>
+                    <option value="industrial">Industrial</option>
+                    <option value="commercial">Commercial</option>
+                    <option value="residential">Residential</option>
+                </select>
+            </div>
+            <div>
+                <label for="location">Enter Location:</label>
+                <textarea name="location" rows="3" required></textarea>
+            </div>
+            <div>
+                <label for="square_yards">Square Yards/Acres:</label>
+                <input type="text" name="square_yards" required>
+            </div>
+            <div>
+                <label for="budget">Budget Range:</label>
+                <input type="text" name="budget_range" required>
+            </div>
+            <div style="flex-basis: 100%; text-align: center;">
+                <button type="submit">Submit Inquiry</button>
+            </div>
+        </form>
+    </div>    
+
+  
+        
+    <!-- About Us Section -->
+    <div id="about-us" style="background: url('{% static 'bulklands/about_us.jfif' %}') no-repeat center center; background-size: cover; padding: 60px; ">
+        <h2>About Us</h2>
+        <p>Tulasi Rao Bulklands is a leader in bulk land acquisitions, dedicated to providing our clients with the perfect residential, commercial, and industrial properties. We have over 20 years of experience in the field and pride ourselves on offering world-class service to all our customers.</p>
+        <p>Our expertise spans multiple areas of real estate, ensuring we can offer you the best advice and solutions.</p>
+    </div>
+
+    <!-- Our Services Section -->
+    <div id="services" style="background: url('{% static 'bulklands/ourservice.jfif' %}') no-repeat center center; background-size: cover; padding: 60px;">
+        <h2>Our Services</h2>
+        <p>We offer a wide range of services including property consultations, bulk acquisitions, and personalized real estate investment advice. Our services extend across residential, commercial, and industrial properties to meet the varying needs of our clients.</p>
+    </div>
+
+    <!-- Land Department Section -->
+    <div id="land-department" style="background: url('{% static 'bulklands/image1.jpg' %}') no-repeat center center; background-size: cover; padding: 60px;">
+        <h2>Land Department</h2>
+        <p>Our land department focuses on identifying and acquiring premium land suitable for a variety of uses. Whether it's agricultural, commercial, or industrial land, we ensure the best deals and smooth transactions for our clients.</p>
+    </div>
+
+    <!-- Our Groups Section -->
+    <div id="our-groups" style="background: url('{% static 'bulklands/our-groups.jpg' %}') no-repeat center center; background-size: cover; padding: 60px;">
+        <h2>Our Groups</h2>
+        <p>Our extensive network of real estate professionals and investors allows us to provide unparalleled access to prime land and property deals. Join our growing list of satisfied clients and investors.</p>
+    </div>
+
+    <!-- Contact Us Section -->
+    <div id="contact-us" style="background: url('{% static 'bulklands/contact-us.jpg' %}') no-repeat center center; background-size: cover; padding: 60px;">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us for personalized consultations and property inquiries. We are here to assist you in finding your ideal land or property investment.</p>
+        <p>Email: tulasirao@gmail.com | Phone: 9999999999</p>
+    </div>
+
+ 
+    <script>
+        let slideIndex1 = 0;
+        showSlides1();
+
+        function showSlides1() {
+            let slides = document.getElementsByClassName("mySlides1");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex1++;
+            if (slideIndex1 > slides.length) {
+                slideIndex1 = 1;
+            }
+            slides[slideIndex1-1].style.display = "block";
+            setTimeout(showSlides1, 4000); // Change image every 4 seconds
+        }
+    </script>
+    <!-- JavaScript to Handle AJAX Submission -->
+    <script>
+        // Function to get CSRF token from cookies
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        // Add event listener to the form to handle submission
+        document.getElementById('inquiryForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const csrfToken = getCookie('csrftoken'); // Get CSRF token from cookies
+            const formData = new FormData(this); // Collect the form data
+
+            // Create a new AJAX request
+            const xhr = new XMLHttpRequest();
+            console.log(xhr);
+            xhr.open('POST', this.action, true); // Use form action as the URL
+
+            // Set required headers
+            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest'); // AJAX header
+            xhr.setRequestHeader('X-CSRFToken', csrfToken); // CSRF token header
+
+            // Handle the response
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    const response = JSON.parse(xhr.responseText);
+                    alert(response.message); // Show success message
+                    document.getElementById('inquiryForm').reset(); // Reset form
+                } else if (xhr.status === 400) {
+                    const errors = JSON.parse(xhr.responseText);
+                    alert('Submission failed: ' + JSON.stringify(errors)); // Display errors
+                } else {
+                    alert('An error occurred. Please try again.');
+                }
+            };
+
+            // Handle network errors
+            xhr.onerror = function() {
+                alert('Request failed.');
+            };
+
+            // Send the form data
+            xhr.send(formData);
+        });
+
+        
+    </script>
+
+{% endblock %}
